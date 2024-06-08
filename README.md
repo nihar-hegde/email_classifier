@@ -2,8 +2,11 @@
 
 ## Todos
 
-- [ ] Bootstrap the project
-- [ ] Setup GitHub
-- [ ] add Google Login button on / Route
-- [ ] add google authentication
+- [x] Bootstrap the project
+- [x] Setup GitHub
+- [x] add Google Login button on / Route
+- [x] add google authentication
+- [ ] add user info with avatar
+- [ ] add logout option
+
 
