@@ -1,16 +1,14 @@
-import { auth } from '@/auth'
-import { redirect } from 'next/navigation';
-import React, { ReactNode } from 'react'
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import React, { ReactNode } from "react";
 
 const UserLayout = async ({ children }: { children: ReactNode }) => {
   const user = await auth();
   if (!user) {
-    return redirect('/dashboard')
+    return redirect("/");
   }
 
-  return (
-    <div>{children}</div>
-  )
-}
+  return <div>{children}</div>;
+};
 
-export default UserLayout
+export default UserLayout;

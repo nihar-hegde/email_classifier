@@ -1,17 +1,23 @@
-import { auth } from '@/auth'
-import React from 'react'
+import { auth } from "@/auth";
+import { LogoutButton } from "@/components/auth/LogoutButton";
+import { Button } from "@/components/ui/button";
+import { UserCard } from "@/components/user/UserCard";
+import { logout } from "@/lib/actions/user.action";
+import React from "react";
 
 const UserPage = async () => {
   const user = await auth();
+  const onClickHandler = async () => {
+    await logout();
+  };
   return (
-    <main className='flex items-center justify-center p-20'>
+    <main className="flex items-center justify-between px-72 py-24">
+      <div>{!user ? <div>User Data Not Found</div> : <UserCard />}</div>
       <div>
-        {
-          user ? <p>{user.user?.name}</p> : <p>Not logged in</p>
-        }
+        <LogoutButton />
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default UserPage
+export default UserPage;
