@@ -6,7 +6,7 @@
 - [x] Setup GitHub
 - [x] add Google Login button on / Route
 - [x] add google authentication
-- [ ] add user info with avatar
-- [ ] add logout option
-
-
+- [x] add logout functionality
+- [x] add user info with avatar
+- [ ] figure out the drop down and fetch buttons
+- [ ] figure out the cards for gmails
