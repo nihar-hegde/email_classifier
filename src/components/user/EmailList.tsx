@@ -1,27 +1,34 @@
-import { getemails } from "@/lib/actions/user.action";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { IndividaulMailCard } from "./IndividaulMailCard";
 
-const EmailList =async () => {
- const emails = await getemails();  
- 
- console.log("Emails",emails)
+interface emailsProps {
+  from: string;
+  subject: string;
+  body: string;
+}
+
+const EmailList = async ({ emails }: { emails: emailsProps[] }) => {
   return (
-    <div>
-       <Card>
-  <CardHeader>
-    
-    <CardTitle></CardTitle>
-    <CardDescription>Card Description</CardDescription>
-  </CardHeader>
-  
-</Card>
+    <div className="w-full">
+      <Card>
+        <CardHeader>
+          <CardTitle>Gmails</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {emails.length > 0 ? ( // Conditionally render
+            emails.map((email, index) => (
+              <IndividaulMailCard
+                key={index}
+                from={email.from}
+                subject={email.subject}
+                body={email.body}
+              />
+            ))
+          ) : (
+            <p>No emails found.</p>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 };

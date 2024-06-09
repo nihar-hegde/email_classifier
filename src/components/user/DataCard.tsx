@@ -1,37 +1,32 @@
-"use client";
+
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+  
 } from "@/components/ui/card";
 import { Button } from "../ui/button";
 import { NumberSelector } from "./NumberSelector";
 import { useState } from "react";
+import EmailList from "./EmailList";
 
-export const DataCard = () => {
-  const [selectedNumber, setSelectedNumber] = useState(10);
 
-  const handlePageSize = (newPageSize: number) => {
-    setSelectedNumber(newPageSize);
-  };
-  
-
+interface Props{
+  pageNumber:number
+}
+export const DataCard = (pageNumber:Props) => {
+ 
   return (
-    <div>
-      <Card>
-        <CardContent>
+    
+      <Card className="p-4 w-full">
+        <CardContent >
           <div className="flex items-center justify-between">
-            <NumberSelector
-              selectedNumber={selectedNumber}
-              onNumberChange={handlePageSize}
-            />
+            <NumberSelector pageNumber={pageNumber.pageNumber} />
             <Button>Categorize</Button>
+          
           </div>
+          
         </CardContent>
       </Card>
-    </div>
+    
   );
 };
