@@ -9,7 +9,9 @@ export default function Home() {
         <p className="text-5xl font-bold">Welcome</p>
       </div>
       <div>
-        <Link href={'/dashboard'} className={buttonVariants()}>Dashboard</Link>
+        <Link href={"/dashboard"} className={buttonVariants()}>
+          Dashboard
+        </Link>
       </div>
       <div>
         <SignInButton />

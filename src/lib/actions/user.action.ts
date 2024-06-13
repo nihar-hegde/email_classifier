@@ -15,7 +15,7 @@ interface GetGmailsParams {
 export const getemails = async (params: GetGmailsParams) => {
   try {
     const maximumResults = params.pageSize;
-    console.log(maximumResults)
+    console.log(maximumResults);
     const session = await auth();
     const accessToken = session?.accessToken;
     const refreshToken = session?.refreshToken;
@@ -73,10 +73,9 @@ export const getemails = async (params: GetGmailsParams) => {
         emails.push({ from, subject, body });
       }
     }
-    revalidatePath('/dashboard')
+    revalidatePath("/dashboard");
     return emails;
   } catch (error) {
     console.log(error);
   }
 };
-
