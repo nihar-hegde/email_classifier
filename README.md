@@ -8,5 +8,8 @@
 - [x] add google authentication
 - [x] add logout functionality
 - [x] add user info with avatar
-- [ ] figure out the drop down and fetch buttons
-- [ ] figure out the cards for gmails
+- [x] figure out the drop down and fetch buttons
+- [x] figure out the cards for gmails
+- [x] fetch gamils
+- [x] on click classify them using openAI api
+- [x] update ui to show the classification
